@@ -1,0 +1,15 @@
+action: py36, msg: installpkg
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league
+cmd: /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/py36/bin/python -m pip install --exists-action w .tox/.tmp/package/1/overwatch-league-skill-0.0.1.zip
+Processing ./.tox/.tmp/package/1/overwatch-league-skill-0.0.1.zip
+Building wheels for collected packages: overwatch-league-skill
+  Building wheel for overwatch-league-skill (setup.py): started
+  Building wheel for overwatch-league-skill (setup.py): finished with status 'done'
+  Created wheel for overwatch-league-skill: filename=overwatch_league_skill-0.0.1-cp36-none-any.whl size=2650 sha256=751d39fcb9139a3aa16dd988b2ca57a0a7aa879eb5503b9d4184f97567104387
+  Stored in directory: /home/joelh/.cache/pip/wheels/62/b3/80/14c0c8f7371dc0f246e3e872016cdcc798121b5bb77473dd64
+Successfully built overwatch-league-skill
+Installing collected packages: overwatch-league-skill
+  Found existing installation: overwatch-league-skill 0.0.1
+    Not uninstalling overwatch-league-skill at /c/Clients/Personal/overwatch-league-skill/overwatch-league, outside environment /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/py36
+    Can't uninstall 'overwatch-league-skill'. No files were found to uninstall.
+Successfully installed overwatch-league-skill-0.0.1

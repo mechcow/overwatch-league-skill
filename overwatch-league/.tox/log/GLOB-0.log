@@ -1,0 +1,33 @@
+action: GLOB, msg: packaging
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league
+cmd: /usr/bin/python3 setup.py sdist --formats=zip --dist-dir .tox/dist
+running sdist
+running egg_info
+writing overwatch_league_skill.egg-info/PKG-INFO
+writing dependency_links to overwatch_league_skill.egg-info/dependency_links.txt
+writing top-level names to overwatch_league_skill.egg-info/top_level.txt
+reading manifest file 'overwatch_league_skill.egg-info/SOURCES.txt'
+writing manifest file 'overwatch_league_skill.egg-info/SOURCES.txt'
+running check
+creating overwatch-league-skill-0.0.1
+creating overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info
+copying files to overwatch-league-skill-0.0.1...
+copying README.md -> overwatch-league-skill-0.0.1
+copying setup.py -> overwatch-league-skill-0.0.1
+copying overwatch_league_skill.egg-info/PKG-INFO -> overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info
+copying overwatch_league_skill.egg-info/SOURCES.txt -> overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info
+copying overwatch_league_skill.egg-info/dependency_links.txt -> overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info
+copying overwatch_league_skill.egg-info/top_level.txt -> overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info
+Writing overwatch-league-skill-0.0.1/setup.cfg
+creating '.tox/dist/overwatch-league-skill-0.0.1.zip' and adding 'overwatch-league-skill-0.0.1' to it
+adding 'overwatch-league-skill-0.0.1'
+adding 'overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info'
+adding 'overwatch-league-skill-0.0.1/PKG-INFO'
+adding 'overwatch-league-skill-0.0.1/README.md'
+adding 'overwatch-league-skill-0.0.1/setup.cfg'
+adding 'overwatch-league-skill-0.0.1/setup.py'
+adding 'overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info/dependency_links.txt'
+adding 'overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info/PKG-INFO'
+adding 'overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info/SOURCES.txt'
+adding 'overwatch-league-skill-0.0.1/overwatch_league_skill.egg-info/top_level.txt'
+removing 'overwatch-league-skill-0.0.1' (and everything under it)

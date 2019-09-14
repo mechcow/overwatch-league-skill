@@ -1,0 +1,6 @@
+README.md
+setup.py
+overwatch_league_skill.egg-info/PKG-INFO
+overwatch_league_skill.egg-info/SOURCES.txt
+overwatch_league_skill.egg-info/dependency_links.txt
+overwatch_league_skill.egg-info/top_level.txt

@@ -1,0 +1,3 @@
+[
+  "tests/test_intents.py::TestIntents::test_GetNextMatchIntent"
+]

@@ -1,0 +1,34 @@
+action: py36, msg: envreport
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league
+cmd: /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/py36/bin/python -m pip freeze
+ask-sdk==1.11.0
+ask-sdk-core==1.11.0
+ask-sdk-dynamodb-persistence-adapter==1.11.0
+ask-sdk-model==1.14.0
+ask-sdk-runtime==1.11.0
+atomicwrites==1.3.0
+attrs==19.1.0
+boto3==1.9.228
+botocore==1.12.228
+certifi==2019.9.11
+chardet==3.0.4
+docutils==0.15.2
+idna==2.8
+importlib-metadata==0.22
+jmespath==0.9.4
+more-itertools==7.2.0
+overwatch-league-skill==0.0.1
+packaging==19.1
+pathlib==1.0.1
+pluggy==0.13.0
+py==1.8.0
+pyparsing==2.4.2
+pytest==5.1.2
+python-dateutil==2.8.0
+requests==2.22.0
+s3transfer==0.2.1
+simplejson==3.16.0
+six==1.12.0
+urllib3==1.25.3
+wcwidth==0.1.7
+zipp==0.6.0

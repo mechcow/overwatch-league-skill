@@ -1,0 +1,48 @@
+action: flake8, msg: getenv
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league
+cmd: /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/flake8/bin/python -m pip install flake8 flake8-colors 'flake8-docstrings>=1.3.1' 'flake8-import-order>=0.9' 'flake8-typing-imports>=1.1' pep8-naming
+Collecting flake8
+  Downloading https://files.pythonhosted.org/packages/26/de/3f815a99d86eb10464ea7bd6059c0172c7ca97d4bdcfca41051b388a653b/flake8-3.7.8-py2.py3-none-any.whl (70kB)
+Collecting flake8-colors
+  Downloading https://files.pythonhosted.org/packages/04/62/1afebe73ea28b363c80aab892298c83f510c65ae079c2c8129f0ea50db46/flake8-colors-0.1.6.tar.gz
+Collecting flake8-docstrings>=1.3.1
+  Downloading https://files.pythonhosted.org/packages/9f/67/01b706429d17acdbe299ec1a077bd38f4323334a9485b85b8b8534a46c61/flake8_docstrings-1.4.0-py2.py3-none-any.whl
+Collecting flake8-import-order>=0.9
+  Downloading https://files.pythonhosted.org/packages/ab/52/cf2d6e2c505644ca06de2f6f3546f1e4f2b7be34246c9e0757c6048868f9/flake8_import_order-0.18.1-py2.py3-none-any.whl
+Collecting flake8-typing-imports>=1.1
+  Downloading https://files.pythonhosted.org/packages/bb/e2/0e4aedf7b6598107dbcd9be8985447afd997903d3ff9566dd58c4b5a7f3f/flake8_typing_imports-1.3.0-py2.py3-none-any.whl
+Collecting pep8-naming
+  Downloading https://files.pythonhosted.org/packages/37/e0/9548dbccda34614865846bdf452e390f2f829e7608e74965dcf0b9433583/pep8_naming-0.8.2-py2.py3-none-any.whl
+Collecting pycodestyle<2.6.0,>=2.5.0 (from flake8)
+  Using cached https://files.pythonhosted.org/packages/0e/0c/04a353e104d2f324f8ee5f4b32012618c1c86dd79e52a433b64fceed511b/pycodestyle-2.5.0-py2.py3-none-any.whl
+Collecting pyflakes<2.2.0,>=2.1.0 (from flake8)
+  Using cached https://files.pythonhosted.org/packages/84/f2/ed0ffb887f8138a8fe5a621b8c0bb9598bfb3989e029f6c6a85ee66628ee/pyflakes-2.1.1-py2.py3-none-any.whl
+Collecting mccabe<0.7.0,>=0.6.0 (from flake8)
+  Using cached https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl
+Collecting entrypoints<0.4.0,>=0.3.0 (from flake8)
+  Using cached https://files.pythonhosted.org/packages/ac/c6/44694103f8c221443ee6b0041f69e2740d89a25641e62fb4f2ee568f2f9c/entrypoints-0.3-py2.py3-none-any.whl
+Collecting pydocstyle>=2.1 (from flake8-docstrings>=1.3.1)
+  Downloading https://files.pythonhosted.org/packages/4b/17/5a4834af38d2afd796ec33b809a570966a8173dacabc44cbc30e75001b4f/pydocstyle-4.0.1-py3-none-any.whl
+Requirement already satisfied: setuptools in ./.tox/flake8/lib/python3.6/site-packages (from flake8-import-order>=0.9) (41.2.0)
+Collecting importlib-metadata>=0.9 (from flake8-typing-imports>=1.1)
+  Using cached https://files.pythonhosted.org/packages/ba/15/29e4fe1624373be313b5a2565d72ca9121a37f40472112f46eda8dc1235b/importlib_metadata-0.22-py2.py3-none-any.whl
+Collecting flake8-polyfill<2,>=1.0.2 (from pep8-naming)
+  Downloading https://files.pythonhosted.org/packages/86/b5/a43fed6fd0193585d17d6faa7b85317d4461f694aaed546098c69f856579/flake8_polyfill-1.0.2-py2.py3-none-any.whl
+Collecting snowballstemmer (from pydocstyle>=2.1->flake8-docstrings>=1.3.1)
+  Downloading https://files.pythonhosted.org/packages/51/16/86a280d59b3bb439e7103ea1a275a191e3d2df8a3543cda0708f7cb4333c/snowballstemmer-1.9.1.tar.gz (82kB)
+Collecting zipp>=0.5 (from importlib-metadata>=0.9->flake8-typing-imports>=1.1)
+  Using cached https://files.pythonhosted.org/packages/74/3d/1ee25a26411ba0401b43c6376d2316a71addcc72ef8690b101b4ea56d76a/zipp-0.6.0-py2.py3-none-any.whl
+Collecting more-itertools (from zipp>=0.5->importlib-metadata>=0.9->flake8-typing-imports>=1.1)
+  Using cached https://files.pythonhosted.org/packages/45/dc/3241eef99eb45f1def35cf93af35d1cf9ef4c0991792583b8f33ea41b092/more_itertools-7.2.0-py3-none-any.whl
+Building wheels for collected packages: flake8-colors, snowballstemmer
+  Building wheel for flake8-colors (setup.py): started
+  Building wheel for flake8-colors (setup.py): finished with status 'done'
+  Created wheel for flake8-colors: filename=flake8_colors-0.1.6-cp36-none-any.whl size=2458 sha256=90b704a0c770b6648c8fd5250138ed03a360bebab5684342acf2ccf81ed93804
+  Stored in directory: /home/joelh/.cache/pip/wheels/5d/e8/4d/c4136580d4b95ef6c4a9e7fc10dc7e742fb8bcb97cc88dbb11
+  Building wheel for snowballstemmer (setup.py): started
+  Building wheel for snowballstemmer (setup.py): finished with status 'done'
+  Created wheel for snowballstemmer: filename=snowballstemmer-1.9.1-cp36-none-any.whl size=101576 sha256=2291c6f1c3fe5e734e649dd9036198c764b0b82590d02967249cca414ca0efba
+  Stored in directory: /home/joelh/.cache/pip/wheels/ae/9b/66/6b8f275ec6dfa2138a56faaf2b4314ca44a4746286560d5578
+Successfully built flake8-colors snowballstemmer
+Installing collected packages: pycodestyle, pyflakes, mccabe, entrypoints, flake8, flake8-colors, snowballstemmer, pydocstyle, flake8-docstrings, flake8-import-order, more-itertools, zipp, importlib-metadata, flake8-typing-imports, flake8-polyfill, pep8-naming
+Successfully installed entrypoints-0.3 flake8-3.7.8 flake8-colors-0.1.6 flake8-docstrings-1.4.0 flake8-import-order-0.18.1 flake8-polyfill-1.0.2 flake8-typing-imports-1.3.0 importlib-metadata-0.22 mccabe-0.6.1 more-itertools-7.2.0 pep8-naming-0.8.2 pycodestyle-2.5.0 pydocstyle-4.0.1 pyflakes-2.1.1 snowballstemmer-1.9.1 zipp-0.6.0

@@ -1,0 +1,9 @@
+action: flake8, msg: getenv
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox
+cmd: /usr/bin/python3 -m virtualenv --no-download --python /usr/bin/python3 flake8
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/flake8/bin/python3
+Also creating executable in /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/flake8/bin/python
+Installing setuptools, pip, wheel...
+done.

@@ -1,0 +1,20 @@
+action: flake8, msg: envreport
+cwd: /c/Clients/Personal/overwatch-league-skill/overwatch-league
+cmd: /c/Clients/Personal/overwatch-league-skill/overwatch-league/.tox/flake8/bin/python -m pip freeze
+entrypoints==0.3
+flake8==3.7.8
+flake8-colors==0.1.6
+flake8-docstrings==1.4.0
+flake8-import-order==0.18.1
+flake8-polyfill==1.0.2
+flake8-typing-imports==1.3.0
+importlib-metadata==0.22
+mccabe==0.6.1
+more-itertools==7.2.0
+overwatch-league-skill==0.0.1
+pep8-naming==0.8.2
+pycodestyle==2.5.0
+pydocstyle==4.0.1
+pyflakes==2.1.1
+snowballstemmer==1.9.1
+zipp==0.6.0

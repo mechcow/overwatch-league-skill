@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.e218251b-00cb-4a3e-9568-271012179456",
+      "resources": {
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:320483128076:function:ask-custom-overwatch-league-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/py/lambda_upload",
+            "functionName": "ask-custom-overwatch-league-default",
+            "handler": "request_handler.handler",
+            "revisionId": "e842b5b5-fe20-4a53-8523-817d7aad2bc2",
+            "runtime": "python3.6"
+          }
+        ],
+        "manifest": {
+          "eTag": "f500cd06f0e532b3e9553845fc4c3b5e"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "f8284a5dd861f00eea6176734ff3b7cd"
+          }
+        }
+      },
+      "was_cloned": false,
+      "merge": {}
+    }
+  }
+}
