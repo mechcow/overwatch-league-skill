@@ -1,0 +1,4 @@
+pathlib>=1.0.1
+ask-sdk>=1.11.0
+simplejson>=3.16.0
+

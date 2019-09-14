@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "hello world",
+            "invocationName": "overwatch league",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -16,16 +16,13 @@
                     "samples": []
                 },
                 {
-                    "name": "HelloWorldIntent",
+                    "name": "GetNextMatchIntent",
                     "slots": [],
                     "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
+                        "when is the next match",
+                        "next match",
+                        "next game",
+                        "next"
                     ]
                 },
                 {

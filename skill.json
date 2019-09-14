@@ -9,7 +9,7 @@
             "hello",
             "help"
           ],
-          "name": "Hello Class World",
+          "name": "overwatch-league",
           "description": "Sample Full Description"
         }
       },
@@ -21,8 +21,8 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/py",
-          "uri": "ask-custom-helloworld-classes-default"
+          "sourceDir": "lambda/py/lambda_upload",
+          "uri": "ask-custom-overwatch-league-default"
         }
       }
     },
