@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# coverage
+.coverage
+.tox
+.venv
+.vscode
+.pytest_cache/
+htmlcov
+tests/__pycache__/
+
+# Distribution / Packaging
+*.egg-info/
+lambda/py/lambda_upload/

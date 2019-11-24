@@ -6,11 +6,13 @@ sys.path.append(str(Path("../lambda/py/")))
 from ask_sdk_core.handler_input import HandlerInput
 import request_handler
 from olapi.OWLSchedule import OWLSchedule
+from freezegun import freeze_time
 
 class TestIntents(unittest.TestCase):
     def setUp(self):
         pass
 
+    @freeze_time("2019-09-11")
     def test_GetNextMatchIntent(self):
         owl_schedule = OWLSchedule(str(Path('tests/mock_responses/schedule.json').absolute()))
         intent_handler = request_handler.GetNextMatchIntentHandler(owl_schedule)

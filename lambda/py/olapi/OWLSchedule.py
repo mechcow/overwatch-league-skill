@@ -1,3 +1,5 @@
+import datetime
+from dateutil import parser
 import simplejson as json
 from olapi.OverwatchLeagueAPIHelper import OverwatchLeagueAPIHelper
 
@@ -18,3 +20,6 @@ class OWLSchedule:
             for match in stage['matches']:
                 if match['state'] != 'CONCLUDED':
                     return match
+    
+    def convertDatetime(self,datestring):
+        return parser.parse(datestring)

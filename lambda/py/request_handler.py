@@ -5,6 +5,7 @@
 # session persistence, api calls, and more.
 # This sample is built using the handler classes approach in skill builder.
 import logging
+from datetime import datetime, timezone
 
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -60,10 +61,27 @@ class GetNextMatchIntentHandler(AbstractRequestHandler):
             self.owl_schedule = OWLSchedule()
 
         match = self.owl_schedule.getNextMatch()
+        match_time = self.owl_schedule.convertDatetime(match['startDate'])
+        now = datetime.now(timezone.utc)
+        tdelta = match_time - now
+
+        day_str = ""
+
+        if tdelta.days == 0: #today
+            day_str = "today"
+        elif tdelta.days == 1: #tomorrow
+            day_str = "tomorrow"
+        elif tdelta.days > 1: 
+            day_str = "on {}".format(match_time.strftime("%A"))
+        else:
+            day_str = "unknown"
+
+        matchtime_speak_output = "{} at {}".format(day_str, match_time.strftime("%H:%M"))
+
         speak_output = data.NEXT_MATCH.format(
             match['competitors'][0]['name'],
             match['competitors'][1]['name'],
-            match['startDate'] #TODO - human format
+            matchtime_speak_output
         )
 
         return (
