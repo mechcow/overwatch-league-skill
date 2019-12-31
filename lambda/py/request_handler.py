@@ -39,29 +39,17 @@ class LaunchRequestHandler(AbstractRequestHandler):
                 .response
         )
 
-
-class GetNextMatchIntentHandler(AbstractRequestHandler):
-    def __init__(self,owl_schedule = None):
-        if owl_schedule:
-            #testing uses this to overwrite the default
-            self.owl_schedule = owl_schedule
+class IntentHelper:
+    @staticmethod
+    def _format_human_time(time):
+        # type: (HandlerInput) -> time
+        if time.minute == 0:
+            return time.strftime("%-I%p")
         else:
-            self.owl_schedule = None #lazy-load later
+            return time.strftime("$-I%m%p")
 
-    """Handler for Schedule Intent."""
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("GetNextMatchIntent")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        logger.info("In GetNextMatchIntentHandler.handle")
-
-        if not self.owl_schedule:
-            self.owl_schedule = OWLSchedule()
-
-        match = self.owl_schedule.getNextMatch()
-        match_time = self.owl_schedule.convertDatetime(match['startDate'])
+    @staticmethod
+    def _match_to_speech(match, match_time):
         now = datetime.now(timezone.utc)
         tdelta = match_time - now
 
@@ -76,20 +64,88 @@ class GetNextMatchIntentHandler(AbstractRequestHandler):
         else:
             day_str = "unknown"
 
-        matchtime_speak_output = "{} at {}".format(day_str, match_time.strftime("%H:%M"))
+        matchtime_speak_output = "{} at {}".format(day_str, IntentHelper._format_human_time(match_time) )
 
         speak_output = data.NEXT_MATCH.format(
             match['competitors'][0]['name'],
             match['competitors'][1]['name'],
             matchtime_speak_output
         )
+        
+        return speak_output
+    
+class GetNextMatchIntentHandler(AbstractRequestHandler):
+    def __init__(self,owl_schedule = None):
+        if owl_schedule:
+            #testing uses this to overwrite the default
+            self.owl_schedule = owl_schedule
+        else:
+            self.owl_schedule = None #lazy-load later
 
+    """Handler for Schedule Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("GetNextMatchIntent")(handler_input)
+
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetNextMatchIntentHandler.handle")
+
+        if not self.owl_schedule:
+            self.owl_schedule = OWLSchedule()
+
+        match = self.owl_schedule.getNextMatch()
+        match_time = self.owl_schedule.convertDatetime(match.get('startDate'))
+        speak_output = IntentHelper._match_to_speech(match, match_time)
         return (
             handler_input.response_builder
                 .speak(speak_output)
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
+
+class GetNextTeamMatchIntentHandler(AbstractRequestHandler):
+    def __init__(self,owl_schedule = None):
+        if owl_schedule:
+            #testing uses this to overwrite the default
+            self.owl_schedule = owl_schedule
+        else:
+            self.owl_schedule = None #lazy-load later
+
+    """Handler for Schedule Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("GetNextTeamMatchIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetNextTeamMatchIntentHandler.handle")
+
+        slots = handler_input.request_envelope.request.intent.slots
+        if 'teamName' not in slots:
+            logger.error("teamName not in slots")
+            logger.error(slots['teamName'].value)
+            return None
+        
+        team_name = slots['teamName'].value
+        logger.info(team_name)
+
+        if not self.owl_schedule:
+            self.owl_schedule = OWLSchedule()
+
+        match = self.owl_schedule.getNextTeamMatch(team_name)
+        match_time = self.owl_schedule.convertDatetime(match.get('startDate'))
+        speak_output = IntentHelper._match_to_speech(match, match_time)
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
+
 
 
 class HelpIntentHandler(AbstractRequestHandler):

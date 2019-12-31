@@ -2,6 +2,33 @@
     "interactionModel": {
         "languageModel": {
             "invocationName": "overwatch league",
+            "types": [
+                {
+                    "name": "LIST_OF_OWL_TEAMS",
+                    "values": [
+                        {
+                            "id": "ATLANTA",
+                            "name": {
+                                "value": "Atlanta Reign",
+                                "synonyms": [
+                                    "Atlanta",
+                                    "Reign"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HANGZHOU",
+                            "name": {
+                                "value": "Hangzhou Spark",
+                                "synonyms": [
+                                    "Hangzhou",
+                                    "Spark"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -26,11 +53,25 @@
                     ]
                 },
                 {
+                    "name": "GetNextTeamMatchIntent",
+                    "slots": [
+                        {
+                            "name": "teamName",
+                            "type": "LIST_OF_OWL_TEAMS"
+                        }
+                    ],
+                    "samples": [
+                        "when does team {teamName} play next",
+                        "when does {teamName} play next",
+                        "what is {teamName} next game",
+                        "when is {teamName} next game"
+                    ]
+                },
+                {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": []
                 }
-            ],
-            "types": []
+            ]
         }
     }
 }
