@@ -20,6 +20,7 @@ class OWLSchedule:
             self.schedule_data = owapi.makeRequest('ScheduleRequest')
 
     def _nextMatchHelper(self, team=None):
+        # type: (OWLSchedule, string) -> list
         stages = self.schedule_data['data']['stages']
         for stage in stages:
             for match in stage.get('matches', []):

@@ -8,6 +8,7 @@ from ask_sdk_model.intent_request import IntentRequest
 from ask_sdk_model import RequestEnvelope
 import request_handler
 from olapi.OWLSchedule import OWLSchedule
+from olapi.OWLStanding import OWLStanding
 from freezegun import freeze_time
 from unittest import mock
 
@@ -60,6 +61,23 @@ class TestIntents(unittest.TestCase):
         self.assertIn("Hangzhou Spark",response.output_speech.ssml)
         self.assertIn("on Thursday",response.output_speech.ssml)
         self.assertIn("at 11PM",response.output_speech.ssml)
+
+    @freeze_time("2020-01-03")
+    def test_getCurrentStandingsIntent(self):
+        owl_standing = OWLStanding(str(Path('tests/mock_responses/standings.json').absolute()))
+        intent_handler = request_handler.GetStandingsIntentHandler(owl_standing)
+        request_envelope = mock.MagicMock(spec=RequestEnvelope)
+        request_envelope.request = mock.MagicMock(spec=IntentRequest)
+        request_envelope.request.intent = mock.MagicMock()
+        request_envelope.request.intent.slots = dict()
+        request_envelope.request.intent.slots['numRankings'] = mock.MagicMock()
+        request_envelope.request.intent.slots['numRankings'].value = 3
+        response = intent_handler.handle(HandlerInput(request_envelope=request_envelope))
+        self.assertIn("The top 3 teams are", response.output_speech.ssml)
+        self.assertIn("Vancouver Titans", response.output_speech.ssml)
+        self.assertIn("San Francisco Shock", response.output_speech.ssml)
+        self.assertIn("New York Excelsior", response.output_speech.ssml)
+
         
 if __name__ == '__main__':
     unittest.main()

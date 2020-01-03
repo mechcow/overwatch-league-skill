@@ -6,6 +6,7 @@
 # This sample is built using the handler classes approach in skill builder.
 import logging
 from datetime import datetime, timezone
+from os.path import join
 
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -16,6 +17,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 
 from olapi.OWLSchedule import OWLSchedule
+from olapi.OWLStanding import OWLStanding
 import data
 
 logger = logging.getLogger(__name__)
@@ -144,8 +146,46 @@ class GetNextTeamMatchIntentHandler(AbstractRequestHandler):
                 .response
         )
 
+class GetStandingsIntentHandler(AbstractRequestHandler):
+    def __init__(self, owl_standings):
+        if owl_standings:
+            #testing uses this to overwrite the default
+            self.owl_standings = owl_standings
+        else:
+            self.owl_standings = None #lazy-load later
 
+    """Handler for Schedule Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("GetStandingsIntent")(handler_input)
 
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetNextTeamMatchIntentHandler.handle")
+
+        numRankings = 3 # default
+        slots = handler_input.request_envelope.request.intent.slots
+        if 'numRankings' in slots:
+            numRankings = slots.get('numRankings').value
+
+        if not self.owl_standings:
+            self.owl_standings = OWLStanding()
+
+        standings = self.owl_standings.getCurrentStandings(numRankings)
+        speak_output = [ "The top {:d} teams are: ".format(numRankings) ]
+
+        for team in standings:
+            speak_output.append("{:d}, {} - ".format(
+                team.get('placement'),
+                team.get('competitor').get('name')
+                ))
+
+        return (
+            handler_input.response_builder
+                .speak("".join(speak_output))
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
 
 
 class HelpIntentHandler(AbstractRequestHandler):
