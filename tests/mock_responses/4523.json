@@ -1,0 +1,215 @@
+{
+    "data": {
+        "id": 4523,
+        "divisionId": 80,
+        "handle": "fuel.6990",
+        "name": "Dallas Fuel",
+        "abbreviatedName": "DAL",
+        "logo": {
+            "main": {
+                "svg": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/YX6JZ6FR89LU1507822882865.svg",
+                "png": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NO44N7DDJAPF1508792362936.png"
+            }
+        },
+        "hasFallback": false,
+        "location": "Dallas, TX",
+        "players": [
+            {
+                "id": 5207,
+                "handle": "fearless.9778",
+                "name": "FEARLESS",
+                "fullName": "Euiseok Lee",
+                "role": "tank",
+                "accounts": [
+                    {
+                        "id": 13332,
+                        "type": "TWITCH",
+                        "url": "https://www.twitch.tv/dksktl12345"
+                    }
+                ],
+                "number": 8,
+                "headshot": "https://images.blz-contentstack.com/v3/assets/blt321317473c90505c/bltaf2a594f2a5b0194/5f1638b3d494e612aff466b0/Dragons_Fearless.png",
+                "homeLocation": "Seoul"
+            },
+            {
+                "id": 12033,
+                "name": "SP9RK1E",
+                "fullName": "Yeonghan Kim",
+                "role": "offense",
+                "accounts": [
+                    {
+                        "id": 15958,
+                        "type": "TWITCH",
+                        "url": "https://www.twitch.tv/sp9rk1e"
+                    },
+                    {
+                        "id": 15956,
+                        "type": "TWITTER",
+                        "url": "https://twitter.com/SP9RK1E_OW"
+                    },
+                    {
+                        "id": 15957,
+                        "type": "INSTAGRAM",
+                        "url": "https://www.instagram.com/sp9rk1e_"
+                    }
+                ],
+                "number": 1,
+                "headshot": "https://images.blz-contentstack.com/v3/assets/blt321317473c90505c/blt9ccdc123fec8e17e/5e45f46780c3d41861a0f979/Eternal_SP9RK1E.png",
+                "homeLocation": "Seoul"
+            },
+            {
+                "id": 12035,
+                "name": "Hanbin",
+                "fullName": "Hanbeen Choi",
+                "role": "tank",
+                "accounts": [
+                    {
+                        "id": 15963,
+                        "type": "TWITCH",
+                        "url": "https://www.twitch.tv/hanbin_ow"
+                    },
+                    {
+                        "id": 15964,
+                        "type": "TWITTER",
+                        "url": "https://twitter.com/HanBin_OW"
+                    }
+                ],
+                "number": 19,
+                "headshot": "https://images.blz-contentstack.com/v3/assets/blt321317473c90505c/blt6a5cd811f5e8dcfc/5e45f458af702f08b6a3296d/Eternal_Hanbin.png",
+                "homeLocation": "Gyeonggi-do"
+            },
+            {
+                "id": 12047,
+                "name": "Doha",
+                "fullName": "Dongha Kim",
+                "role": "offense",
+                "accounts": [
+                    {
+                        "id": 15868,
+                        "type": "TWITTER",
+                        "url": "https://twitter.com/Doha_OW"
+                    },
+                    {
+                        "id": 15869,
+                        "type": "TWITCH",
+                        "url": "https://www.twitch.tv/dohaow"
+                    }
+                ],
+                "number": 20,
+                "headshot": "https://images.blz-contentstack.com/v3/assets/blt321317473c90505c/blt6ffb82ed1331f69d/5e4725cc1a3b6617fcdccd73/Fuel_DOHA.png",
+                "homeLocation": "Seoul"
+            }
+        ],
+        "colors": {
+            "primary": {
+                "color": "#0c2340",
+                "opacity": 1
+            },
+            "secondary": {
+                "color": "#0072ce",
+                "opacity": 1
+            }
+        },
+        "accounts": [
+            {
+                "id": 2268,
+                "type": "TWITTER",
+                "url": "https://twitter.com/DallasFuel"
+            },
+            {
+                "id": 2424,
+                "type": "DISCORD",
+                "url": "https://discord.gg/dallasfuel"
+            },
+            {
+                "id": 2372,
+                "type": "INSTAGRAM",
+                "url": "https://www.instagram.com/DallasFuel"
+            },
+            {
+                "id": 2267,
+                "type": "FACEBOOK",
+                "url": "https://www.facebook.com/TheDallasFuel"
+            },
+            {
+                "id": 2269,
+                "type": "YOUTUBE_CHANNEL",
+                "url": "https://www.youtube.com/channel/UCj4XSmDqIhRT4frKzRTMyrA"
+            }
+        ],
+        "website": "",
+        "placement": 15,
+        "advantage": 0,
+        "records": {
+            "matchWin": 10,
+            "matchLoss": 18,
+            "matchDraw": 0,
+            "matchBye": 0,
+            "gameWin": 43,
+            "gameLoss": 70,
+            "gameTie": 3,
+            "gamePointsFor": 0,
+            "gamePointsAgainst": 0,
+            "comparisons": [
+                {
+                    "key": "MATCH_WIN_PERCENTAGE",
+                    "value": 0.35714286
+                },
+                {
+                    "key": "MATCH_DIFFERENTIAL",
+                    "value": -8
+                },
+                {
+                    "key": "MATCH_GAME_DIFFERENTIAL",
+                    "value": -27
+                },
+                {
+                    "key": "GAME_HEAD_TO_HEAD_DIFFERENTIAL",
+                    "value": null
+                },
+                {
+                    "key": "MATCH_HEAD_TO_HEAD_DIFFERENTIAL",
+                    "value": null
+                },
+                {
+                    "key": "ADVANTAGE",
+                    "value": 0
+                }
+            ]
+        }
+    },
+    "meta": {
+        "strings": {
+            "owl.team.header.atlantic": "Atlantic",
+            "owl.team.header.pacific": "Pacific",
+            "owl.team.view-all": "View All",
+            "owl.teams.recent-match-vods": "Recent Matches",
+            "owl.team.header.social": "Social",
+            "owl.team.header.w": "W",
+            "owl.team.header.l": "L",
+            "owl.standings.header.alt.division": "Division",
+            "owl.team.league-standing": "League Standing",
+            "owl.team.location": "Location",
+            "owc.content-modules.round-robin.match-record": "Match Record",
+            "owl.teams.roster.team-website": "Team Website",
+            "owl.team.upcoming-matches": "Upcoming Matches",
+            "owl.team.no-matches-scheduled": "No matches scheduled",
+            "owl.matches.game.roster": "Roster",
+            "owl.content-modules.recent-news.title": "Recent News",
+            "owl.players.roles.offense": "Damage",
+            "owl.players.roles.defense": "Damage",
+            "owl.players.roles.tank": "Tank",
+            "owl.players.roles.support": "Support",
+            "owl.players.roles.flex": "Flex",
+            "owl.schedule.today": "Today",
+            "owl.schedule.match-details": "Match Details",
+            "owl.labels.news": "News",
+            "owl.labels.feature": "Feature",
+            "owl.labels.announcement": "Announcement",
+            "owl.labels.training": "Training",
+            "owl.labels.path-to-pro": "Path to Pro",
+            "owl.labels.highlight": "Highlight",
+            "owl.labels.analysis": "Analysis"
+        }
+    }
+}

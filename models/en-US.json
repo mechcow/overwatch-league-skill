@@ -7,6 +7,16 @@
                     "name": "LIST_OF_OWL_TEAMS",
                     "values": [
                         {
+                            "id": "4523",
+                            "name": {
+                                "value": "Dallas Fuel",
+                                "synonyms": [
+                                    "Dallas",
+                                    "Fuel"
+                                ]
+                            }
+                        }
+                        {
                             "id": "ATLANTA",
                             "name": {
                                 "value": "Atlanta Reign",

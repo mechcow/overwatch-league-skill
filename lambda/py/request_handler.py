@@ -15,9 +15,11 @@ import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.handler_input import HandlerInput
 
 from ask_sdk_model import Response
+from ask_sdk_model.slu.entityresolution import StatusCode
 
 from olapi.OWLSchedule import OWLSchedule
 from olapi.OWLStanding import OWLStanding
+from olapi.OWLTeam import OWLTeam
 import data
 
 logger = logging.getLogger(__name__)
@@ -127,7 +129,6 @@ class GetNextTeamMatchIntentHandler(AbstractRequestHandler):
         slots = handler_input.request_envelope.request.intent.slots
         if 'teamName' not in slots:
             logger.error("teamName not in slots")
-            logger.error(slots['teamName'].value)
             return None
         
         team_name = slots['teamName'].value
@@ -180,6 +181,53 @@ class GetStandingsIntentHandler(AbstractRequestHandler):
                 team.get('competitor').get('name')
                 ))
 
+        return (
+            handler_input.response_builder
+                .speak("".join(speak_output))
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+class GetTeamRecordIntentHandler(AbstractRequestHandler):
+    def __init__(self, owl_team = None):
+        if owl_team:
+            self.owl_team = owl_team
+        else:
+            self.owl_team = None
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        return ask_utils.is_intent_name("GetTeamRecordIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetTeamRecordIntentHandler.handle")
+
+        slots = handler_input.request_envelope.request.intent.slots
+        if 'teamName' not in slots:
+            logger.error("teamName not in slots")
+            return None
+
+        team_name = slots.get('teamName').value
+        teamId = None
+        resolution = slots.get('teamName').resolutions.resolutions_per_authority[0]
+        if resolution.status.code == StatusCode.ER_SUCCESS_MATCH:
+            resolutionValues = resolution.values[0]
+            teamId = resolutionValues.value.id
+            
+        logger.info("Got teamName: {} teamId: {}".format(team_name, teamId))
+
+        if not self.owl_team:
+            self.owl_team = OWLTeam(teamId=teamId)
+        
+        record = self.owl_team.getTeamRecord()
+        speak_output = "{} have {:d} wins, {:d} losses and {:d} draws".format(
+            self.owl_team.getTeamName(),
+            record['matchWin'],
+            record['matchLoss'],
+            record['matchDraw']
+        )
+        
         return (
             handler_input.response_builder
                 .speak("".join(speak_output))
